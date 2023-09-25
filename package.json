@@ -1,19 +1,19 @@
 {
   "name": "react-18-vite-intro",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
+    "dev": "vite",
     "fix": "pnpm run \"/^fix:.*/\"",
     "fix:eslint": "next lint --fix",
     "fix:prettier": "prettier --ignore-unknown --cache --write .",
     "lint": "pnpm run \"/^lint:.*/\"",
     "lint:eslint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:prettier": "prettier --ignore-unknown --cache --check .",
-    "lint:types": "tsc --pretty"
+    "lint:types": "tsc --pretty",
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "18.2.0",
