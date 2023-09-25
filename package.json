@@ -6,8 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "fix": "pnpm run \"/^fix:.*/\"",
+    "fix:eslint": "next lint --fix",
+    "fix:prettier": "prettier --ignore-unknown --cache --write .",
+    "lint": "pnpm run \"/^lint:.*/\"",
+    "lint:eslint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:prettier": "prettier --ignore-unknown --cache --check .",
+    "lint:types": "tsc --pretty"
   },
   "dependencies": {
     "react": "18.2.0",
