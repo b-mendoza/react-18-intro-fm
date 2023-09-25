@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { createElement } from 'react';
 
 interface PetProps {
   animal: string;
@@ -9,11 +9,11 @@ interface PetProps {
 export const Pet = (props: PetProps) => {
   const { animal, breed, name } = props;
 
-  return React.createElement(
+  return createElement(
     'div',
     null,
-    React.createElement('h2', null, name),
-    React.createElement('h3', null, animal),
-    React.createElement('h3', null, breed),
+    createElement('h2', null, name),
+    createElement('h3', null, animal),
+    createElement('h3', null, breed),
   );
 };
