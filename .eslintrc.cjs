@@ -2,13 +2,16 @@
 
 /** @type {import("eslint").ESLint.ConfigData} */
 module.exports = {
-  env: { browser: true, es2020: true },
+  env: {
+    browser: true,
+    es2020: true,
+  },
   extends: [
     'plugin:@typescript-eslint/strict-type-checked',
     'plugin:@typescript-eslint/stylistic-type-checked',
     'plugin:react-hooks/recommended',
   ],
-  ignorePatterns: ['!.*', '*.tsbuildinfo', 'dist'],
+  ignorePatterns: ['!.*', '*.tsbuildinfo', 'dist', 'node_modules'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -26,5 +29,10 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
 };
