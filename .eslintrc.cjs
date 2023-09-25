@@ -8,12 +8,14 @@ module.exports = {
     'plugin:@typescript-eslint/stylistic-type-checked',
     'plugin:react-hooks/recommended',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  ignorePatterns: ['!.*', '*.tsbuildinfo', 'dist'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaFeatures: { jsx: true },
+    ecmaFeatures: {
+      jsx: true,
+    },
     ecmaVersion: 'latest',
-    project: true,
+    project: ['./tsconfig.json', './tsconfig.eslint.json'],
     sourceType: 'module',
     tsconfigRootDir: __dirname,
   },
