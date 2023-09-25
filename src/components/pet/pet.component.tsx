@@ -1,5 +1,3 @@
-import { createElement } from 'react';
-
 interface PetProps {
   animal: string;
   breed: string;
@@ -9,11 +7,11 @@ interface PetProps {
 export const Pet = (props: PetProps) => {
   const { animal, breed, name } = props;
 
-  return createElement(
-    'div',
-    null,
-    createElement('h2', null, name),
-    createElement('h3', null, animal),
-    createElement('h3', null, breed),
+  return (
+    <article>
+      <h2>{name}</h2>
+      <h3>{animal}</h3>
+      <h3>{breed}</h3>
+    </article>
   );
 };

@@ -1,5 +1,3 @@
-import { createElement } from 'react';
-
 import { Pet } from '../pet';
 
 const animals = [
@@ -23,10 +21,13 @@ const animals = [
 type AppProps = React.HTMLProps<HTMLDivElement>;
 
 export const App = (props: AppProps) => {
-  return createElement(
-    'div',
-    props,
-    createElement('h1', null, 'Adopt Me!'),
-    animals.map((animal) => createElement(Pet, animal)),
+  return (
+    <div {...props}>
+      <h1>Adopt Me!</h1>
+
+      {animals.map((animal) => {
+        return <Pet {...animal} />;
+      })}
+    </div>
   );
 };
