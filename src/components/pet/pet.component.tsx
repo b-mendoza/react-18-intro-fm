@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-type PetProps = {
+interface PetProps {
   animal: string;
   breed: string;
   name: string;
-};
+}
 
 export const Pet = (props: PetProps) => {
   const { animal, breed, name } = props;
