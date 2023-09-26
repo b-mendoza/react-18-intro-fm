@@ -2,7 +2,8 @@ import './index.css';
 
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { App } from './components/app';
+
+import { App } from '@/components/app';
 
 const containerElement = document.querySelector<HTMLDivElement>('#root');
 

@@ -1,5 +1,5 @@
-import { apiResponseSchema } from '../constants/schemas.ts';
-import { API_URL } from '../constants/shared.ts';
+import { apiResponseSchema } from '@/constants/schemas.ts';
+import { API_URL } from '@/constants/shared.ts';
 
 export const getInitialPets = async () => {
   const response = await fetch(API_URL);

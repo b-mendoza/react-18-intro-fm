@@ -1,6 +1,6 @@
-import { type AllowedAnimal } from '../constants/animals.ts';
-import { apiResponseSchema } from '../constants/schemas.ts';
-import { API_URL } from '../constants/shared.ts';
+import { type AllowedAnimal } from '@/constants/animals.ts';
+import { apiResponseSchema } from '@/constants/schemas.ts';
+import { API_URL } from '@/constants/shared.ts';
 
 type GetPetsArgs = Partial<{
   animal: AllowedAnimal;

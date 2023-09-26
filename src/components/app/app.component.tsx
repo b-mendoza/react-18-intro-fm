@@ -1,6 +1,6 @@
 import { Toaster } from 'react-hot-toast';
 
-import { SearchParams } from '../search-params';
+import { SearchParams } from '@/components/search-params';
 
 type AppProps = React.HTMLProps<HTMLDivElement>;
 

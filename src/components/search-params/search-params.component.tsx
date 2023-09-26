@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 
+import { Pet } from '@/components/pet';
 import {
   ALLOWED_ANIMALS,
   isAllowedAnimal,
   type AllowedAnimal,
-} from '../../constants/animals';
-import { type Pet as PetSchema } from '../../constants/schemas';
-import { getInitialPets } from '../../services/get-initial-pets';
-import { getPets } from '../../services/get-pets';
-import { Pet } from '../pet';
+} from '@/constants/animals';
+import { type Pet as PetSchema } from '@/constants/schemas';
+import { getInitialPets } from '@/services/get-initial-pets';
+import { getPets } from '@/services/get-pets';
 
 const FIELD_NAMES = {
   Animal: 'animal',
