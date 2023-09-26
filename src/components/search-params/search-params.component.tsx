@@ -1,56 +1,15 @@
 import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 
+import {
+  ALLOWED_ANIMALS,
+  isAllowedAnimal,
+  type AllowedAnimal,
+} from '../../constants/animals';
+import { type Pet as PetSchema } from '../../constants/schemas';
+import { getInitialPets } from '../../services/get-initial-pets';
+import { getPets } from '../../services/get-pets';
 import { Pet } from '../pet';
-import { type Pet as PetSchema } from './schema.ts';
-
-const ALLOWED_ANIMALS = ['bird', 'cat', 'dog', 'rabbit', 'reptile'] as const;
-
-type AllowedAnimal = (typeof ALLOWED_ANIMALS)[number];
-
-const isAllowedAnimal = (
-  animal: string,
-): animal is (typeof ALLOWED_ANIMALS)[number] => {
-  return Array.from<string>(ALLOWED_ANIMALS).includes(animal);
-};
-
-const API_URL = new URL('http://pets-v2.dev-apis.com/pets');
-
-const getInitialPets = async () => {
-  const response = await fetch(API_URL);
-
-  const data = await response.json();
-
-  const { apiResponseSchema } = await import('./schema.ts');
-
-  return apiResponseSchema.parse(data);
-};
-
-interface GetPetsArgs {
-  animal?: AllowedAnimal;
-  breed?: string;
-  location?: string;
-}
-
-const getPets = async (args: GetPetsArgs) => {
-  const { animal, breed, location } = args;
-
-  const apiURL = new URL(API_URL);
-
-  Object.entries({ animal, breed, location }).forEach(([key, value]) => {
-    if (value == null) return;
-
-    apiURL.searchParams.append(key, value);
-  });
-
-  const response = await fetch(apiURL);
-
-  const data = await response.json();
-
-  const { apiResponseSchema } = await import('./schema.ts');
-
-  return apiResponseSchema.parse(data);
-};
 
 const FIELD_NAMES = {
   Animal: 'animal',
